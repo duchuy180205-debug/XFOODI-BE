@@ -10,7 +10,7 @@ export class OrderService {
   async onOrderStatusChanged(orderId: string, newStatusId: number): Promise<void> {
     await prisma.orderDetail.updateMany({
       where: { orderId },
-      data: { itemStatusId: newStatusId },
+      data: { itemStatusId: Number(newStatusId) },
     });
   }
 }

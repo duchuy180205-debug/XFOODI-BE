@@ -1,7 +1,7 @@
-import { Router } from 'express';
+import { Router, type Router as IRouter } from 'express';
 import crypto from 'crypto';
 
-const router = Router();
+const router: IRouter = Router();
 
 const mockTenant = {
   id: crypto.randomUUID(),

@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import { Router, type Router as IRouter } from 'express';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import crypto from 'crypto';
@@ -11,7 +11,7 @@ import { generateAccessAndRefreshTokens } from '../services/authToken.service';
 
 import { ENV } from '../config/env';
 
-const router = Router();
+const router: IRouter = Router();
 const ACCESS_SECRET = ENV.JWT.ACCESS_SECRET;
 const REFRESH_SECRET = ENV.JWT.REFRESH_SECRET;
 
